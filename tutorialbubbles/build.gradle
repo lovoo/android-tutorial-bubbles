@@ -1,0 +1,37 @@
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'findbugs'
+
+findbugs {
+    toolVersion = "3.0.1"
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    findbugs configurations.findbugsPlugins.dependencies
+    findbugsPlugins 'com.mebigfatguy.fb-contrib:fb-contrib:6.0.1'
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
+}

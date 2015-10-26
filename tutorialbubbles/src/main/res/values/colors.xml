@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Notification bubble colors -->
+    <color name="tooltip_background">#edf6f6f6</color>
+    <color name="notification_bubble_male">#32aadc</color>
+    <color name="notification_bubble_female">#e63296</color>
+    <color name="transparentYellow">#aaffff00</color>
+    <color name="transparentRed">#aaff1b2e</color>
+    <color name="transparentBlue">#aa1d74ff</color>
+    <color name="transparentGreen">#aa30ff24</color>
+</resources>
