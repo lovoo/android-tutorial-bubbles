@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">TutorialBubbleDemo</string>
+    <string name="app_name">Tutorial Bubble Demo</string>
     <string name="action_settings">Settings</string>
+
+    <string name="example_info">This example shows how a tutrial bubble can be used.</string>
+    <string name="example_button_test">Click to explain me</string>
 </resources>
