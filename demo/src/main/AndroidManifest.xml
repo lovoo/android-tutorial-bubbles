@@ -2,6 +2,11 @@
 <manifest package="com.lovoo.tutorialbubbledemo"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- set this permission to use tutorials directly on window -->
+    <!--
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

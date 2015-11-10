@@ -2,7 +2,6 @@ package com.lovoo.tutorialbubbledemo;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -12,10 +11,15 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.lovoo.tutorialbubbles.TutorialScreen;
+import com.lovoo.tutorialbubbles.utils.Utils;
 
+/**
+ * Demo activity that shows the use of the tutorial bubbles
+ */
 public class MainActivity extends AppCompatActivity {
 
-    private TutorialScreen buttonTutorialScreen;
+    private TutorialScreen buttonTutorial;
+    private TutorialScreen fabButtonTutorial;
 
     @Override
     protected void onCreate ( Bundle savedInstanceState ) {
@@ -24,38 +28,31 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick ( View view ) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         final Button explainButton = (Button) findViewById(R.id.explain_button);
         explainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick ( View v ) {
-                buttonTutorialScreen.showTutorial();
+                // call this to dispplay your tutorial
+                buttonTutorial.showTutorial();
             }
         });
 
         explainButton.post(new Runnable() {
             @Override
             public void run () {
-                buttonTutorialScreen = new TutorialScreen.TutorialBuilder(R.layout.button_tutorial_layout, explainButton)
-                        .setParentLayout(findViewById(R.id.root_layout))
-                        .setDismissible(true)
-                        .addHighlightView(explainButton, true)
+                buttonTutorial = new TutorialScreen.TutorialBuilder(R.layout.button_tutorial_layout, explainButton)
+                        .setParentLayout(getWindow().getDecorView())    // parent layout is necessary for layout approach, use decorView or a root relative layout
+                        .setDismissible(true)                           // set if this bubble can be dismissed by clicking somewhere outside of its context
+                        .addHighlightView(explainButton, false)         // sets the view that should be explained
                         .setOnTutorialLayoutInflatedListener(new TutorialScreen.OnTutorialLayoutInflatedListener() {
+                            // you can use this callback to bind the bubble layout and apply logic to it
                             @Override
                             public void onLayoutInflated ( View view ) {
                                 // put code here for tutorial
                                 view.findViewById(R.id.tutorial_inner_button).setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick ( View v ) {
-                                        Toast.makeText(MainActivity.this, "Some buton action", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "Button in bubble clicked.", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             }
@@ -65,6 +62,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // another example how to further customize the bubble
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.post(new Runnable() {
+            @Override
+            public void run () {
+                fabButtonTutorial = new TutorialScreen.TutorialBuilder(R.layout.fab_tutorial_layout, fab)
+                        .setParentLayout(getWindow().getDecorView())
+                        .addHighlightView(fab, false)
+                        .setTutorialBackgroundColor(getResources().getColor(R.color.transparentRed)) // set another bubble color
+                        .setFunnelLength(Utils.dpToPx(getApplicationContext(), 35))                // changes the length of the bubble funnel
+                        .setFunnelWidth(Utils.dpToPx(getApplicationContext(), 30))                 // changes the width of the bubble funnel
+                        .setTutorialOffsetFromAnchor(Utils.dpToPx(getApplicationContext(), 8))    // sets the distance between anchor and bubble
+                        .setOnTutorialLayoutInflatedListener(new TutorialScreen.OnTutorialLayoutInflatedListener() {
+                            @Override
+                            public void onLayoutInflated ( View view ) {
+                                view.findViewById(R.id.tutorial_inner_button).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick ( View v ) {
+                                        fabButtonTutorial.dismissTutorial();
+                                    }
+                                });
+                            }
+                        })
+                        .build();
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick ( View view ) {
+                fabButtonTutorial.showTutorial();
+            }
+        });
     }
 
     @Override

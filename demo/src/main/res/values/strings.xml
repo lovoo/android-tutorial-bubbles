@@ -2,6 +2,8 @@
     <string name="app_name">Tutorial Bubble Demo</string>
     <string name="action_settings">Settings</string>
 
-    <string name="example_info">This example shows how a tutrial bubble can be used.</string>
+    <string name="example_info">This example shows how a tutorial bubble can be used by clicking on one of the following buttons. This example draws the tutorials within the view hierarchy.</string>
     <string name="example_button_test">Click to explain me</string>
+    <string name="example_info_text">You can layout the content of the bubble with normal layout xml files. This bubble is dismissable by clicking somewhere outside the bubble.</string>
+    <string name="fab_info_text">Another example how you may customize your tutorial</string>
 </resources>
