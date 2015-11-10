@@ -1,4 +1,4 @@
-# android-tutorial-bubbles
+# android-tutorial-bubbles [![Build Status](https://travis-ci.org/Lovoo/android-tutorial-bubbles.svg)](https://travis-ci.org/Lovoo/android-tutorial-bubbles)
 A little ui framework that displays a styled tutorial bubble, which positions and scales itself based on a given anchor view.
 
 
