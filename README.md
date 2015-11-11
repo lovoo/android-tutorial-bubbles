@@ -19,8 +19,8 @@ Check out the code example in the demo project.
 
 ###Screenshots
 
-|<img src="https://github.com/Lovoo/android-tutorial-bubbles/blob/master/screen1.png" width="270" height="480" />|
-|<img src="https://github.com/Lovoo/android-tutorial-bubbles/blob/master/screen2.png" width="270" height="480" />|
+|<img src="https://github.com/Lovoo/android-tutorial-bubbles/blob/master/screen1.png?raw=true" width="270" height="480" />|
+|<img src="https://github.com/Lovoo/android-tutorial-bubbles/blob/master/screen2.png?raw=true" width="270" height="480" />|
 
 
 Licence
