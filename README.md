@@ -1,6 +1,24 @@
 # android-tutorial-bubbles [![Build Status](https://travis-ci.org/Lovoo/android-tutorial-bubbles.svg)](https://travis-ci.org/Lovoo/android-tutorial-bubbles)
 A little ui framework that displays a styled tutorial bubble, which positions and scales itself based on a given anchor view.
 
+###Usage
+
+If you have some element within your layout, that should be explained with a small tutorial, this small library may be your way to go! 
+
+__Features:__
+* displays a styleable bubble with custom XML layout
+* popup bubble scales itself according to its content and relative to the given anchor view and the available screen space
+* bubble displays a dynamically drawn funnel that points toward the anchor view
+* anchor view or any other view can be highlighted while the background is dimmed
+* simple builder-pattern with chaining config calls
+
+The library uses two approaches to display the tutorial bubble. If you supply a parent view within the builder, the parent will be used to draw the tutorial. 
+If no parent view is set and you set `android.permission.SYSTEM_ALERT_WINDOW` permission in your manifest instead, the system window will be used to draw the bubble. In the later case, you'll need to relay the `onResume()` and `onPause()` events from either an activity or fragment to your tutorial. 
+
+Check out the code example in the demo project.
+
+
+
 
 Licence
 
