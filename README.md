@@ -1,4 +1,4 @@
-# android-tutorial-bubbles [![Build Status](https://travis-ci.org/Lovoo/android-tutorial-bubbles.svg)](https://travis-ci.org/Lovoo/android-tutorial-bubbles)
+# AndroidTutorialBubbles [![Build Status](https://travis-ci.org/Lovoo/android-tutorial-bubbles.svg)](https://travis-ci.org/Lovoo/android-tutorial-bubbles)
 A little ui framework that displays a styled tutorial bubble, which positions and scales itself based on a given anchor view.
 
 ###Usage
@@ -17,7 +17,10 @@ If no parent view is set and you set `android.permission.SYSTEM_ALERT_WINDOW` pe
 
 Check out the code example in the demo project.
 
+###Screenshots
 
+|<img src="https://github.com/Lovoo/android-tutorial-bubbles/blob/master/screen1.png" width="270" height="480" />|
+|<img src="https://github.com/Lovoo/android-tutorial-bubbles/blob/master/screen2.png" width="270" height="480" />|
 
 
 Licence
