@@ -5,7 +5,7 @@ sudo: false
 branches:
   only: master
 
-script: gradle :demo:assembleRelease
+script: gradle :androidTutorialBubbles:assembleRelease
 
 android:
   components:

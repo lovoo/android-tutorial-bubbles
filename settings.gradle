@@ -1,2 +1,2 @@
-include ':demo'
-include ':tutorialbubbles'
+include ':tutorialsDemoApp'
+include ':androidTutorialBubbles'

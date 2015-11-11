@@ -3,6 +3,7 @@ repositories {
     jcenter()
 }
 
+
 apply plugin: 'com.android.library'
 apply plugin: 'findbugs'
 apply plugin: 'com.novoda.bintray-release'
@@ -19,7 +20,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     buildTypes {
         release {
@@ -39,11 +40,11 @@ dependencies {
 
 publish {
     userOrg = 'lovoo'
-    groupId = 'com.lovoo.android'
+    groupId = 'com.lovoo'
     artifactId = 'AndroidTutorialBubbles'
     version = '1.0.0'
     description = 'A little ui framework that displays a styled tutorial bubble, which positions and scales itself based on a given anchor view.'
     website = 'https://github.com/Lovoo/android-tutorial-bubbles'
-    issueTracker = "https://github.com/Lovoo/android-tutorial-bubbles/issues"
-    repository = "https://github.com/Lovoo/android-tutorial-bubbles.git"
+    issueTracker = 'https://github.com/Lovoo/android-tutorial-bubbles/issues'
+    repository = 'https://github.com/Lovoo/android-tutorial-bubbles.git'
 }
